@@ -1,0 +1,37 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: API-GATWAY
+  cloud:
+    gateway:
+      routes:
+      - id: COURS-SERVICE
+        uri: lb://COURS-SERVICE
+        predicates:
+        - Path=/cours/**
+      - id: ETUDIANTS-SERVICE 
+        uri: lb://ETUDIANTS-SERVICE 
+        predicates:
+        - Path=/etudiants/**  
+      - id: AUTH-SERVICE
+        uri: lb://AUTH-SERVICE 
+        predicates:
+        - Path=/api/** 
+      - id: ETHERUM-SERVICE
+        uri: lb://ETHERUM-SERVICE 
+        predicates:
+        - Path=/apiii/**         
+
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+   

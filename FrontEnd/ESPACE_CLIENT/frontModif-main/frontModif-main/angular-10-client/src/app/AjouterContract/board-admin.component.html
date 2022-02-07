@@ -1,0 +1,121 @@
+<div class="container">
+ <!-- <header class="jumbotron">
+    <p>{{ content }}</p>
+  </header>-->
+
+  <div class="card"   style = " width: 50%; margin: 10px auto;">
+    <h5 class="card-header">Ajouter une annance de vende</h5>
+    <div class="card-body">
+    <form name="form"
+    (ngSubmit)="f.form.valid && save()"  #f="ngForm" novalidate>
+    <div class="form-groupe">
+      <label for="name">Adresse de vendeur</label>
+      <input  id="name"[(ngModel)]="bienIm.addressVendeur" class="form-control" type="text" name="address"  minlength="42" required #address="ngModel" >
+  </div><br>
+ 
+        <div
+class="alert alert-danger"
+role="alert"
+*ngIf="f.submitted && address.invalid">
+<div *ngIf="address.errors.minlength">Adresse Invalid</div>
+<div *ngIf="address.errors.required">l'adresse de vendeur est obligatoire !</div>
+
+</div>
+<div class="form-groupe">
+  <label for="name">Adresse de l'acheteur</label>
+  <input  id="name"[(ngModel)]="bienIm.addressAcheteur" class="form-control" type="text" name="address"  minlength="42" required #address="ngModel" >
+</div><br>
+
+    <div
+class="alert alert-danger"
+role="alert"
+*ngIf="f.submitted && address.invalid">
+<div *ngIf="address.errors.minlength">Adresse Invalid</div>
+<div *ngIf="address.errors.required">l'adresse de l'acheteur est obligatoire !</div>
+
+</div>
+<div class="form-groupe">
+    <label for="name">Titre de Bien Immobilier</label>
+    <input  [(ngModel)]="bienIm.titre" id="name" class="form-control" type="text" name="titre" required #titre="ngModel">
+</div>
+<div
+class="alert alert-danger"
+role="alert"
+*ngIf="f.submitted && titre.invalid"
+>Titre de Bien Immobilier est obligatoire !
+</div>
+<div class="form-groupe">
+    <label for="name">Prix De Bien Immobilier</label>
+    <input  [(ngModel)]="bienIm.price" id="name" class="form-control" type="text" name="price" required #price="ngModel">
+</div>
+<div
+class="alert alert-danger"
+role="alert"
+*ngIf="f.submitted && price.invalid"
+>Prix De Bien Immobilier est obligatoire !
+</div>
+
+<div class="form-groupe">
+  <label for="name">Nom de Vendeur</label>
+  <input  [(ngModel)]="bienIm.nomVendeur" id="name" class="form-control" type="text" name="nomVendeur" required #nomVendeur="ngModel">
+</div>
+<div
+class="alert alert-danger"
+role="alert"
+*ngIf="f.submitted && nomVendeur.invalid"
+>Nom de Vendeur est obligatoire !
+</div>
+
+<div class="form-groupe">
+  <label for="name">Nom de l'acheteur</label>
+  <input  [(ngModel)]="bienIm.nomAcheteur" id="name" class="form-control" type="text" name="nomVendeur" required #nomAcheteur="ngModel">
+</div>
+<div
+class="alert alert-danger"
+role="alert"
+*ngIf="f.submitted && nomVendeur.invalid"
+>Nom de l'acheteur est obligatoire !
+</div>
+<div class="form-groupe">
+  <label for="name">Description de Bien Immobilier</label>
+  <input  [(ngModel)]="bienIm.description" id="name" class="form-control" type="text" name="description" required #description="ngModel">
+</div>
+<div
+class="alert alert-danger"
+role="alert"
+*ngIf="f.submitted && description.invalid"
+>description est obligatoire !
+</div>
+<div class="form-groupe">
+  <label for="name">Location de Bien Immobilier</label>
+  <input  [(ngModel)]="bienIm.local" id="name" class="form-control" type="text" name="local" required #local="ngModel">
+</div>
+<div
+class="alert alert-danger"
+role="alert"
+*ngIf="f.submitted && local.invalid"
+>Location de Bien Immobilier est obligatoire !
+</div>
+<div class="form-groupe">
+  <label for="name">Date de Contrat</label>
+  <input  [(ngModel)]="bienIm.date" id="name" class="form-control" type="text" name="local" required #local="ngModel">
+</div>
+<div
+class="alert alert-danger"
+role="alert"
+*ngIf="f.submitted && local.invalid"
+>La date est obligatoire !
+</div>
+<button type="submit"> Enregistrer</button>
+<div class="form-group">
+  <div
+    class="alert alert-danger"
+    role="alert"
+    *ngIf="f.submitted && submitFailed">
+    Vos informations ne sont pas enregistré !
+  </div>
+</div>
+</form>
+    </div>
+ 
+</div>

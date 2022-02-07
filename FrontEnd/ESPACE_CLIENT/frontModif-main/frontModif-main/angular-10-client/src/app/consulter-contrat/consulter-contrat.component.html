@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+
+<br>
+<div class="container">
+<h2>Entrer l'identifiant de votre contrat</h2>
+<input style="width: 550px;" [(ngModel)]="titre" id="name"  type="text" name="titre" class="form-control" /><br>
+<button class="btn btn-secondary" (click)="update()">consulter</button>
+<br><br>
+<app-child-component  *ngIf="send" [item] = "tit" ></app-child-component>
+</div>
+

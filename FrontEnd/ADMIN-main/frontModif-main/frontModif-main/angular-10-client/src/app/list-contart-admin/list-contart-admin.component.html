@@ -1,0 +1,46 @@
+
+<br><br>
+<a href="/admin" class="btn btn-secondary" >Ajouter Contrat</a>
+
+<br><br>
+
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Titre</th>
+          <th scope="col">Prix</th>
+          <th scope="col">Acteurs du Contrat</th>
+        
+          
+          <th scope="col">Description du Bien immobilier</th>
+          <th scope="col">Location du Bien immobilier</th>
+          <th scope="col">Date de création</th>
+          <th scope="col">Crée par</th>
+   
+          <th scope="col">Supprimer le contrat</th>
+        </tr>
+      </thead>
+      <tbody>
+     
+        <tr *ngFor="let bienIm of listBienIm">
+        
+          <td> {{bienIm.titre}}</td>
+          <td> {{bienIm.price}}</td>
+          <td > <ul *ngFor="let act of bienIm.acteurs" ><li>{{act.type}} :</li> <li>Nom: {{act.nom}}</li> <li>Addresse: {{act.address}}</li> </ul></td>
+         
+
+          <td> {{bienIm.description}}</td>
+          <td> {{bienIm.local}}</td>
+          <td> {{bienIm.date}}</td>
+          <td> {{bienIm.user.username}}</td>
+     
+          <td>     <button class="btn btn-secondary" (click)="Supprimer(bienIm.titre)">Supprimer</button></td>
+        </tr>
+       
+      </tbody>
+    </table>
+
+   
+
+
+

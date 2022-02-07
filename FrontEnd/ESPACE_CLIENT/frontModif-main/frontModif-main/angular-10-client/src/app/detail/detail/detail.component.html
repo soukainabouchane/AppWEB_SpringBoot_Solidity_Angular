@@ -1,0 +1,21 @@
+<br><br>
+  <div class= "container center" >
+  <div class="card">
+    <div class="card-header">
+      <h1  style="font-size:80px !important;" >Informations sur votre Bien Immobilier  </h1> 
+    </div>
+    <ul class="list-group list-group-flush">
+   
+    <li class="list-group-item"  ><h1 style="font-size:40px !important;">hhhhDescription de Bien mmobilier : {{cntr.description}}</h1></li>
+      <li class="list-group-item"><h1 style="font-size:80px !important;">Location de Bien Immobilier : {{cntr.local}}</h1></li>
+      <li class="list-group-item"><h1 style="font-size:80px !important;">La date de vende : {{cntr.date}}</h1></li>
+      <li class="list-group-item"><h1 style="font-size:80px !important;">Titre : {{cntr.titre}}</h1></li>
+      <li class="list-group-item"><h1 style="font-size:80px !important;">Prix : {{cntr.price}}  (eth)</h1></li>
+      <li class="list-group-item"><h1 style="font-size:80px !important;">Acteurs de Contrat :</h1> <ul *ngFor="let act of cntr.acteurs"><li>{{act.type}} :</li> <li>Nom: {{act.nom}}</li> <li>Addresse: {{act.address}}</li> </ul></li>
+    
+    
+ 
+     
+    </ul>
+  </div>
+</div>

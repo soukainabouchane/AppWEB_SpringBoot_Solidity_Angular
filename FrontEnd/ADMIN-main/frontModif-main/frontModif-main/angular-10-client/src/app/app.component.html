@@ -1,0 +1,50 @@
+<div id="app" >
+  <nav class="navbar navbar-expand navbar-info bg-info">
+  <!--  <img  src="" sizes="16x16">-->
+        <a  class="navbar-brand"> TANGER IMMOBILIER</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <!--<li class="nav-item">
+        <a href="/home" class="nav-link" routerLink="home">Home </a>
+      </li>-->
+      <!-- <li class="nav-item" *ngIf="showUserBoard" >
+        <a href="/listContratUser" class="nav-link" routerLink="listContratUser">Contrats</a>
+      </li> -->
+    
+      <li class="nav-item" *ngIf="showAdminBoard"  >
+        <a href="/listContratAdmin" style="color: rgb(255, 255, 255)" class="nav-link" routerLink="listContratAdmin">Gestion Contrats</a>
+      </li  >
+     
+     <!-- <li class="nav-item" *ngIf="showModeratorBoard">
+        <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
+      </li>-->
+      <li class="nav-item">
+        <a href="/user" style="color: rgb(255, 255, 255)" class="nav-link" *ngIf="showAdminBoard" routerLink="user">Gestion Utilisateurs</a>
+      </li>
+      <li class="nav-item">
+        <a  *ngIf="isLoggedIn" href="/consulterContrat" style="color: rgb(255, 255, 255)"  class="nav-link" routerLink="consulterContrat">Consultation des contrats</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <!-- <li class="nav-item">
+        <a href="/register" style="color: rgb(0, 0, 0)" class="nav-link" routerLink="register">S'inscrir</a>
+      </li> -->
+      <li class="nav-item">
+        <a href="/login" style="color: rgb(0, 0, 0)" class="nav-link" routerLink="login">Se Connecter</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/profile" style="color: rgb(255, 255, 255)" class="nav-link" routerLink="profile">Hello {{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" style="color: rgb(255, 255, 255)"  (click)="logout()">Déconnecter</a>
+      </li>
+    </ul>
+  </nav>
+
+ <!-- <div class="container center">-->
+    <router-outlet></router-outlet>
+  <!--</div>-->
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Username</th>
+          <th scope="col">Email</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+     
+        <tr *ngFor="let user of userss">
+          
+          <td> {{user.username}}</td>
+          <td> {{user.email}}</td>
+          
+         <td> <button class="btn btn-secondary"  (click)="supprime(user.id)" >Supprimer</button></td>
+        </tr>
+       
+      </tbody>
+    </table>
+    </div>
+   

@@ -1,0 +1,34 @@
+<div class="container" > 
+<form style = "width: 50%; margin: 50px;" >
+    <h1  style =  "margin: 50px;">Modification de Profile</h1>
+    <div class="form" >
+        <br>
+      <label for="exampleInputEmail1"><h1>Email</h1></label>
+      <input type="email" class="form-control" name="user.email" [(ngModel)] ="user.email" id="email"   placeholder="Enter email">
+    </div>
+    <div class="form">
+        <br>
+      <label for="exampleInputPassword1"><h1>Mot de passe</h1></label>
+      <input type="password" class="form-control" name="user.password"   id="password" placeholder="mot de passe">
+    </div>
+    <!--<div class="form">
+        <br>
+        <label for="exampleInputPassword1"><h1>Confirmation du mot de passe</h1></label>
+        <input type="password" class="form-control" name="" id="confirm_password" placeholder="mot de passe">
+
+      </div> -->
+      <br>
+    <button type="Enregistrer"  (click) ="updateUser()" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<script>
+        $(document).ready(function () {
+    $('#password, #confirm_password').on('keyup', function () {
+  if ($('#password').val() == $('#confirm_password').val()) {
+    $('#message').html('Matching').css('color', 'green');
+  } else 
+    $('#message').html('Not Matching').css('color', 'red');
+});
+});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
